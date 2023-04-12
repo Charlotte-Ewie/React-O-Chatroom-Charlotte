@@ -9,6 +9,7 @@ const reducer = (state = initialState, action = {}) => {
     case "CREER_UN_PREMIER_MESSAGE":
       return {
         ...state,
+        firstMessage: action.message
 
       }
 

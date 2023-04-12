@@ -8,6 +8,7 @@ import Messages from './Messages';
 
 const App = () => (  // Ici, le return est implicite
   <div className='app'>
+    <h1> Résultat</h1>
     <Form />
     <Messages />
 
