@@ -1,5 +1,5 @@
 import './styles.scss';
-
+import { Send } from "react-feather";
 import { useSelector, useDispatch } from 'react-redux';
 import { newMessage, addMessage } from "../actions/newMessage";
 
@@ -32,7 +32,9 @@ const Form = () => {
           dispatch(newMessage(e.target.value))
         }}
       />
-      <button type="submit" className="form-button"> </button>
+      <button type="submit" className="form-button">
+        <Send size={48} />
+      </button>
 
     </form>
   )

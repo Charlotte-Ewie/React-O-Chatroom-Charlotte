@@ -1,0 +1,9 @@
+@use "sass:color";
+
+//Colors
+$darkColor: #13405d;
+$mediumColor: color.scale($darkColor, $lightness: 40%);
+$lightColor: color.scale($darkColor, $lightness: 70%);
+$backgroundMessage: #fff;
+//Size
+$inputHeight: 4rem;

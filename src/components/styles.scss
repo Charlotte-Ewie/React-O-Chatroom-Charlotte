@@ -1,9 +1,87 @@
+@use "../styles/vars";
+
+// CSS de l'Application/Chatroom
 .app {
   width: 500px;
-  margin: 1em auto;
-  text-align: center;
+  background-color: vars.$lightColor;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
 }
 
-.app img {
-  max-width: 150px;
+// CSS du formulaire de chat
+.form {
+  position: absolute;
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  .form-input {
+    height: vars.$inputHeight;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    padding-right: vars.$inputHeight;
+  }
+
+  .form-button {
+    width: vars.$inputHeight;
+    height: vars.$inputHeight;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    padding: 0.7em ° 0.3em 0;
+    color: vars.$mediumColor;
+
+  }
+}
+
+// CSS des échanges de dialogues/messages
+.messages {
+  padding: 2em;
+  // réserver de la place en bas pour le formulaire
+  margin-bottom: vars.$inputHeight;
+  position: absolute;
+  // on étend de chaque côté jusqu'au bord de l'élément qui sert de référence pour
+  // le positionnement
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+
+  .message {
+    margin-bottom: 1.2rem;
+    // sert de référence pour le triangle du contenu
+    position: relative;
+
+    .message-author {
+      padding-left: 1.2em;
+    }
+
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/::before
+    &::before {
+      content: "";
+
+      // triangle en CSS : https://css-tricks.com/snippets/css/css-triangle/
+      border-bottom: 20px solid vars.$backgroundMessage;
+      border-left: 25px solid transparent;
+      position: absolute;
+      top: 1em;
+      left: 1.5em;
+    }
+
+    .message-content {
+      padding: 1.2rem 1.3rem;
+      margin-top: 0.8rem;
+      border-radius: 1.6rem;
+      background-color: vars.$backgroundMessage;
+      color: vars.$mediumColor;
+      // pour prendre seulement la largeur nécessaire pour le contenu, pas 100%
+      display: inline-block;
+    }
+  }
 }

@@ -13,7 +13,7 @@ const Messages = () => {
   const messages = useSelector((state => state.messages));
 
   return (
-    <div className='chat'>
+    <div className='messages'>
       {messages.map((message) => (
         <Message key={message.id} {...message} />    // {...message} vaut content="blabla" 
       ))}

@@ -10,9 +10,8 @@ const App = () => {
   return (
     <div className='app'>
       <h1> Résultat</h1>
-      <Form />
       <Messages />
-
+      <Form />
 
     </div>
   )

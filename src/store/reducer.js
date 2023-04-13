@@ -1,8 +1,5 @@
 // Première étape, on créé notre initial state
 // L'idée pour le créer est de s'inspirer de la maquette fournie
-
-import { newMessage } from "../actions/newMessage"
-
 const initialState = {
   messages: [
     {
@@ -25,7 +22,7 @@ const initialState = {
   inputValue: ''
 }
 
-const reducer = (state = initialState, action = {}) => {
+const chatReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case "NEW_MESSAGE":
       return {
@@ -49,7 +46,7 @@ const reducer = (state = initialState, action = {}) => {
   }
 }
 
-export default reducer;
+export default chatReducer;
 
 
 
