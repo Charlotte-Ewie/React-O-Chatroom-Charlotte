@@ -1,6 +1,7 @@
 import './styles.scss';
 
 import { useSelector, useDispatch } from 'react-redux';
+import { newMessage, addMessage } from "../actions/newMessage";
 
 
 /** Je veux pouvoir envoyer un message dans le chat
@@ -14,31 +15,27 @@ const Form = () => {
   const inputValue = useSelector((state) => state.inputValue);
 
   return (
-    <>
-      <form
-        className="form"
-        onSubmit={console.log("j'ai submit")}
-      >
-        <input
-          type="text"
-          className='form-input'
-          placeholder='Votre meilleur message ici...'
-          value={inputValue}
-          onChange={(e) => {
-            dispatch({ type: "", newValue: e.target.value })
-          }}
-        />
-        <button type="submit" className="form-button" onClick={() => dispatch(newFirstMessage(newValue))}> Envoyer </button>
+    <form
+      className="form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (inputValue.lenght < 1) return;
+        dispatch(addMessage());
+      }}
+    >
+      <input
+        type="text"
+        className='form-input'
+        placeholder='Votre message ici...'
+        value={inputValue}
+        onChange={(e) => {
+          dispatch(newMessage(e.target.value))
+        }}
+      />
+      <button type="submit" className="form-button"> </button>
 
-
-      </form>
-    </>
+    </form>
   )
-
 }
-
-
-
-
 
 export default Form;

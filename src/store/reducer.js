@@ -1,6 +1,8 @@
 // Première étape, on créé notre initial state
 // L'idée pour le créer est de s'inspirer de la maquette fournie
 
+import { newMessage } from "../actions/newMessage"
+
 const initialState = {
   messages: [
     {
@@ -25,12 +27,22 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case "CREER_UN_MESSAGE":
+    case "NEW_MESSAGE":
       return {
         ...state,
-        messages: action.message
-
+        inputValue: action.message
       }
+    case "ADD_MESSAGE":
+      const addMessage = {
+        id: state.messages.lenght + 1,
+        author: "Super Chat",
+        content: state.inputValue,
+      }
+
+      const newArray = [...state.messages, addMessage]
+      return {
+        ...state, messages: newArray, inputValue: ''
+      };
 
     default:
       return state;
