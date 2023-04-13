@@ -1,15 +1,34 @@
-const initialState = {  // On créé notre state initial dans notre reducer
-  firstMessage: 'Salut ça va ?',
-  secondMessage: "T'as pas des super-croquettes ?",
-  thirdMessage: 'Stp',
-};
+// Première étape, on créé notre initial state
+// L'idée pour le créer est de s'inspirer de la maquette fournie
+
+const initialState = {
+  messages: [
+    {
+      id: 1,
+      author: "Super Chat",
+      content: "Salut ça va ?",
+    },
+    {
+      id: 2,
+      author: "Super Chat",
+      content: "T'as pas des super-croquettes ?",
+    },
+    {
+      id: 3,
+      author: "Super Chat",
+      content: "Stp",
+    }
+
+  ],
+  inputValue: ''
+}
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case "CREER_UN_PREMIER_MESSAGE":
+    case "CREER_UN_MESSAGE":
       return {
         ...state,
-        firstMessage: action.message
+        messages: action.message
 
       }
 

@@ -1,24 +1,34 @@
-// import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react'
+import './styles.scss';
 
-import { newFirstMessage } from '../actions/newMessage';
+import { useSelector, useDispatch } from 'react-redux';
+
+
+/** Je veux pouvoir envoyer un message dans le chat
+ * 1- On va charger useDispatch()
+ * 2- On va récupérer inputValue dans le state avec useSelector
+ * 3- On va retourner le contenu du composant
+ */
 
 const Form = () => {
   const dispatch = useDispatch();
-  const [newValue, setNewValue] = useState('');
+  const inputValue = useSelector((state) => state.inputValue);
+
   return (
     <>
-
-      <form className="form">
+      <form
+        className="form"
+        onSubmit={console.log("j'ai submit")}
+      >
         <input
           type="text"
           className='form-input'
           placeholder='Votre meilleur message ici...'
-          value={newValue}
-          onChange={(e) => setNewValue(e.target.value)}
+          value={inputValue}
+          onChange={(e) => {
+            dispatch({ type: "", newValue: e.target.value })
+          }}
         />
-        <button type="button" className="" onClick={() => dispatch(newFirstMessage(newValue))}> Envoyer </button>
+        <button type="submit" className="form-button" onClick={() => dispatch(newFirstMessage(newValue))}> Envoyer </button>
 
 
       </form>
