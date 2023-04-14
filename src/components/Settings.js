@@ -4,11 +4,11 @@ const Settings = () => {
 
   return (
     <form className="settingsForm">
-      <input type='text' className="settingsForm-input" placeholder="Saisissez votre email"
+      <input type='text' className="settingsForm-input" placeholder="Votre email"
       />
-      <input type='text' className="settingsForm-input" placeholder="Saisissez votre mot de passe"
+      <input type='text' className="settingsForm-input" placeholder="Votre mot de passe"
       />
-      <button type="submit" className="settingsForm-submit">
+      <button type="submit" className="settingsForm-submit"> Envoyer
       </button>
     </form>
   )

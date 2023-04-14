@@ -92,3 +92,31 @@
   right: 0;
   color: white;
 }
+
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  width: 200px;
+  margin-top: 2rem;
+  padding-right: 1rem;
+}
+
+.settingsForm-input {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  color: #3999d6;
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.4rem;
+}
+
+.settingsForm-submit {
+  background-color: vars.$mediumColor;
+  color: #fff;
+  border-radius: 0.4rem;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.4rem;
+
+}
