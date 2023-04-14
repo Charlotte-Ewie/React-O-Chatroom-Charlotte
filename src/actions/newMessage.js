@@ -5,3 +5,6 @@ export const newMessage = (message) => ({        // On peut lire cette fonction 
 export const addMessage = () => ({
   type: "ADD_MESSAGE"
 })
+export const toggleSettingsDisplay = () => ({
+  type: "TOGGLE_DISPLAY_SETTINGS"
+})

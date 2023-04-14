@@ -41,6 +41,11 @@ const chatReducer = (state = initialState, action = {}) => {
         ...state, messages: newArray, inputValue: ''
       };
 
+    case "TOGGLE_DISPLAY_SETTINGS":
+      return {
+        ...state, settingsDisplayed: !state.settingsDisplayed
+      }
+
     default:
       return state;
   }
