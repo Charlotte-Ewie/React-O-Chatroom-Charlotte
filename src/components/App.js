@@ -5,7 +5,7 @@ import Settings from './Settings';
 import { toggleSettingsDisplay } from "../actions/newMessage"
 
 import "./styles.scss";
-import { PlusCircle } from "react-feather";
+import { PlusCircle, XCircle } from "react-feather";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -16,9 +16,18 @@ const App = () => {
 
   return (
     <>
-
-      <PlusCircle className='btn-plus' onClick={() => dispatch(toggleSettingsDisplay())} size={35} />
-      {toggleDisplay && <Settings />}
+      {/* // si toggleDisplay est différent de true ? alors j'applique plusCircle 
+      sinon : j'applique Xcircle*/}
+      {
+        (toggleDisplay != true)
+          ?
+          <PlusCircle className='btn-plus' onClick={() => dispatch(toggleSettingsDisplay())} size={35} />
+          :
+          <>
+            <XCircle className='btn-plus' onClick={() => { dispatch(toggleSettingsDisplay()) }} size={35} />
+            <Settings />
+          </>
+      }
       <div className='app'>
 
         <h1> Résultat</h1>
