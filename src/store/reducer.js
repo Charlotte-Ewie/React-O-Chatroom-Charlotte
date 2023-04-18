@@ -41,10 +41,17 @@ const chatReducer = (state = initialState, action = {}) => {
         ...state, messages: newArray, inputValue: ''
       };
 
-    case "TOGGLE_DISPLAY_SETTINGS":
-      return {
-        ...state, settingsDisplayed: !state.settingsDisplayed
-      }
+    case "TOGGLE_SETTINGS":
+      console.log("isSettingsOpen: " + !state.isSettingsOpen);
+      return { ...state, isSettingsOpen: !state.isSettingsOpen }
+
+    case "UPDATE_SETTINGS_FIELD":
+      console.log({ [action.identifier]: action.newValue });
+      return { ...state, [action.identifier]: action.newValue }
+
+    case "SAVE_SUCCESSFUL_AUTH":
+      return { ...state, pseudo: action.pseudo, email: "", password: "", isSettingsOpen: false }
+
 
     default:
       return state;

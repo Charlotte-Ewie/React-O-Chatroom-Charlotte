@@ -87,39 +87,73 @@
 }
 
 // CSS formulaire de connexion
-.btn-plus {
-  position: absolute;
+.settings {
+  position: fixed;
   right: 0;
-  color: white;
-  margin-top: 2.3rem;
-  margin-right: 0.6rem;
-  cursor: pointer;
-}
-
-.settingsForm {
+  top: 0.5em;
+  padding: 1em;
   display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 3rem;
-  width: 180px;
-  margin-top: 2rem;
+
+  &-toggle {
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: vars.$accentColor;
+    transition: 50ms;
+
+    &--open {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+
+      color: vars.$accentColorLighter;
+      transform: scale(1.1);
+    }
+  }
+
+  &-form {
+    width: 100%;
+    margin-left: 0.8em;
+    transition: 50ms;
+    animation: grow 400ms ease-out;
+  }
+
+  &-submit {
+    width: 100%;
+    background-color: vars.$accentColor;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem;
+    font-size: 1.2em;
+    transition: 50ms;
+
+    &:hover {
+      background-color: vars.$accentColorLight;
+    }
+  }
+
 }
 
+// CSS du Field 
+@use "src/styles/vars";
 
-.settingsForm-input {
-  background-color: #fff;
-  border-radius: 0.4rem;
-  color: #3999d6;
-  display: inline-block;
-  margin-top: 0.4rem;
-  padding: 0.4rem 0.4rem;
-}
+.field {
+  margin: 2rem 0;
 
-.settingsForm-submit {
-  background-color: vars.$mediumColor;
-  color: #fff;
-  border-radius: 0.4rem;
-  margin-top: 0.4rem;
-  padding: 0.4rem 0.4rem;
+  &-input {
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 1.2rem;
 
+    &:focus {
+      border-color: vars.$accentColorLighter;
+    }
+  }
 }

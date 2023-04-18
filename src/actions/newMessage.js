@@ -5,6 +5,17 @@ export const newMessage = (message) => ({        // On peut lire cette fonction 
 export const addMessage = () => ({
   type: "ADD_MESSAGE"
 })
-export const toggleSettingsDisplay = () => ({
-  type: "TOGGLE_DISPLAY_SETTINGS"
-})
+export const updateSettingsField = (newValue, identifier) => ({
+  type: "UPDATE_SETTINGS_FIELD",
+  newValue,
+  identifier,
+});
+
+export const submitLogin = () => ({
+  type: "SUBMIT_LOGIN"
+});
+
+export const saveSuccessfulAuth = (pseudo) => ({
+  type: "SAVE_SUCCESSFUL_AUTH",
+  pseudo
+});
