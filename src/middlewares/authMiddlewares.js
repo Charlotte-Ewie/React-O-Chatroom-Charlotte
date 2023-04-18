@@ -1,5 +1,5 @@
 import axios from "axios";
-import { saveSuccessfulAuth } from '../actions/chat';
+import { saveSuccessfulAuth } from '../actions/newMessage';
 
 const authMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

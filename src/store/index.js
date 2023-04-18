@@ -1,4 +1,4 @@
-import { createStore } from 'redux';    // On importe createStore depuis redux
+import { createStore, applyMiddleware } from 'redux';    // On importe createStore depuis redux
 
 import reducer from './reducer';        // On importe notre fonction reducer
 import authMiddleware from '../middlewares/authMiddlewares';
