@@ -1,7 +1,7 @@
 import { Plus } from 'react-feather';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleSettings, updateSettingsField, submitLogin } from '../../actions/chat';
-import Field from '../Field';
+import { toggleSettings, updateSettingsField, submitLogin } from '../actions/newMessage';
+import Field from './Field';
 
 import './styles.scss';
 

@@ -5,6 +5,9 @@ export const newMessage = (message) => ({        // On peut lire cette fonction 
 export const addMessage = () => ({
   type: "ADD_MESSAGE"
 })
+export const toggleSettings = () => ({
+  type: "TOGGLE_SETTINGS"
+});
 export const updateSettingsField = (newValue, identifier) => ({
   type: "UPDATE_SETTINGS_FIELD",
   newValue,
