@@ -22,3 +22,12 @@ export const saveSuccessfulAuth = (pseudo) => ({
   type: "SAVE_SUCCESSFUL_AUTH",
   pseudo
 });
+
+export const sendMessage = () => ({
+  type: "SEND_MESSAGE"
+})
+
+export const handleMessageReceived = (newMessage) => ({
+  type: "HANDLE_MESSAGE_RECEIVED",
+  newMessage
+})

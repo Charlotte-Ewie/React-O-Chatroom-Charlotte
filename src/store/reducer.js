@@ -52,6 +52,9 @@ const chatReducer = (state = initialState, action = {}) => {
     case "SAVE_SUCCESSFUL_AUTH":
       return { ...state, pseudo: action.pseudo, email: "", password: "", isSettingsOpen: false }
 
+    case "HANDLE_MESSAGE_RECEIVED":
+      return { ...state, messages: [...state.messages, action.newMessage], inputValue: "" }
+
 
     default:
       return state;

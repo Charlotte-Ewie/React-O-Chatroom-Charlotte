@@ -1,7 +1,7 @@
 import './styles.scss';
 import { Send } from "react-feather";
 import { useSelector, useDispatch } from 'react-redux';
-import { newMessage, addMessage } from "../actions/newMessage";
+import { newMessage, sendMessage } from "../actions/newMessage";
 
 
 /** Je veux pouvoir envoyer un message dans le chat
@@ -20,7 +20,7 @@ const Form = () => {
       onSubmit={(e) => {
         e.preventDefault();
         if (inputValue.lenght < 1) return;
-        dispatch(addMessage());
+        dispatch(sendMessage());
       }}
     >
       <input
