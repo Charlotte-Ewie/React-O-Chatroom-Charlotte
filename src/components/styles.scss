@@ -91,18 +91,20 @@
   position: absolute;
   right: 0;
   color: white;
-  margin-right: 1rem;
+  margin-top: 2.3rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
 }
 
 .settingsForm {
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 0;
-  width: 200px;
+  right: 3rem;
+  width: 180px;
   margin-top: 2rem;
-  padding-right: 1rem;
 }
+
 
 .settingsForm-input {
   background-color: #fff;
